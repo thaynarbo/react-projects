@@ -1,0 +1,27 @@
+.container {
+	display: grid;
+	padding: 2rem;
+	width: 100%;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: 1rem 2rem;
+	list-style-type: none;
+	place-items: center;
+	-moz-column-gap: 1rem;
+	column-gap: 2.8rem;
+}
+
+.container li {
+	text-align: center;
+	box-sizing: border-box;
+	color: white;
+	padding: 1rem;
+	border-radius: 1rem;
+	background: rgb(190, 196, 235);
+	background: linear-gradient(
+		41deg,
+		rgba(99, 100, 102, 0.5) 0%,
+		rgba(26, 27, 29, 0.5) 88%
+	);
+
+	max-width: 18rem;
+}

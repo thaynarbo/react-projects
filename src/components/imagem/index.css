@@ -1,0 +1,8 @@
+.imagem {
+	height: 20rem;
+	width: 15rem;
+	border-top-left-radius: 2rem;
+	border-top-right-radius: 2rem;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
