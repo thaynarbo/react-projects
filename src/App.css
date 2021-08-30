@@ -56,7 +56,7 @@
 .fundo {
 	background-color: #1b2845;
 	background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
-
+	padding: 1rem;
 	display: grid;
 	place-items: center;
 	min-height: 100vh;
@@ -93,7 +93,7 @@
 .form {
 	display: flex;
 	flex-direction: column;
-	width: 30rem;
+	min-width: 30rem;
 	background: linear-gradient(
 		to right bottom,
 		rgba(255, 255, 255, 0.7),
@@ -114,6 +114,39 @@
 	outline: none;
 	border-radius: 1rem;
 	border: none;
+}
+.form button {
+	align-self: center;
+	padding: 0.5rem 0.75rem;
+	border-radius: 1rem;
+	border: none;
+	cursor: pointer;
+	background: rgba(255, 68, 0, 0.644);
+	color: #fff;
+	font-size: 1.2rem;
+}
+.form button:hover {
+	color: #fff;
+	background: rgba(185, 49, 0, 0.822);
+}
+
+@media screen and (max-width: 576px) {
+	.form {
+		min-width: 60%;
+	}
+}
+
+.description {
+	resize: none;
+	border-radius: 1.2rem;
+	outline: none;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+	-moz-column-gap: 1rem;
+	     column-gap: 1rem;
 }
 
 @-webkit-keyframes App-logo-spin {

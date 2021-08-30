@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Imagem from "./components/imagem";
-import Botao from "./components/botao";
+import Botao, { BotaoDelete, BotaoEdit } from "./components/botao";
 import TituloSubtitulo from "./components/titulo-subtitulo";
 import Paragrafo from "./components/paragrafos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function App() {
 	const [filmes, setFilmes] = useState([
@@ -108,29 +106,6 @@ export default function App() {
 
 	return (
 		<div className='fundo'>
-			<ul className='container'>
-				{filmes.map((f, index) => (
-					<li key={index}>
-						<TituloSubtitulo nome={f.nome} />
-						<Imagem src={f.imagemUrl} />
-						<Botao />
-						<Paragrafo desc={f.description} />
-						<button onClick={() => handleDelete(index)}>
-							Deletar
-							<FontAwesomeIcon icon={faTrashAlt} />
-						</button>
-						<button
-							onClick={() => {
-								setEditando(true);
-								setIndiceEdit(index);
-							}}
-						>
-							Editar
-							<FontAwesomeIcon icon={faEdit} />
-						</button>
-					</li>
-				))}
-			</ul>
 			<form className='form' onSubmit={handleSubmit}>
 				<label>Nome do Filme:</label>
 				<input
@@ -145,11 +120,31 @@ export default function App() {
 					onChange={handleUrlChange}
 				/>
 				<textarea
+					className='description'
 					onChange={handleDesChange}
 					value={description}
 				></textarea>
 				<button type='submit'>enviar</button>
 			</form>
+			<ul className='container'>
+				{filmes.map((f, index) => (
+					<li key={index}>
+						<TituloSubtitulo nome={f.nome} />
+						<Imagem src={f.imagemUrl} />
+						<Botao />
+						<Paragrafo desc={f.description} />
+						<div className='btn-container'>
+							<BotaoDelete onClick={() => handleDelete(index)} />
+							<BotaoEdit
+								onClick={() => {
+									setEditando(true);
+									setIndiceEdit(index);
+								}}
+							/>
+						</div>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

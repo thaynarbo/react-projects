@@ -14,3 +14,23 @@
 	background-color: rgba(25, 38, 55, 1);
 	color: #fff;
 }
+
+.btn-delete,
+.btn-edit {
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.75rem;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-edit span {
+	color: green;
+}
+.btn-delete span {
+	color: #ff4400;
+}
+
+.btn-delete span,
+.btn-edit span {
+	margin-left: 0.3rem;
+}
